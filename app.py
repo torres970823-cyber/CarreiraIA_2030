@@ -684,7 +684,7 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
 
-    st.caption("Fontes: WEF Future of Jobs Report 2025/2030 & McKinsey Global Institute.")
+    st.caption("Fontes: Dataset Kaggle (AI Impact on Jobs 2030), WEF Future of Jobs Report 2025/2030 & McKinsey.")
 
     st.markdown('<div class="color-sep"></div>', unsafe_allow_html=True)
 
@@ -817,60 +817,99 @@ with tab_compare:
     <div class="section-card section-card-pink" style="margin-bottom:1.2rem;">
         <h3 style="margin:0 0 0.5rem 0; color:#951165;">⚖️ Comparador de Carreiras</h3>
         <p style="margin:0; color:#6B7280; font-size:0.9rem;">
-            Compare dois perfis profissionais lado a lado e visualize as diferenças de risco, potencial de aumento e composição de tarefas.
+            Compare dois perfis profissionais lado a lado e visualize as diferenças de risco, potencial de aumento, radar de competências e tarefas afetadas.
         </p>
     </div>
     """, unsafe_allow_html=True)
 
+    # Botões de Preset Rápido para Comparação
+    st.markdown("**⚡ Cenários Prontos para Teste Rápido:**")
+    col_p1, col_p2, col_p3 = st.columns(3)
+    with col_p1:
+        if st.button("👥 Dev Júnior vs. Tech Lead Sênior", use_container_width=True):
+            st.session_state["comp_role_a"] = "Desenvolvedor Front-end Júnior"
+            st.session_state["comp_exp_a"] = 1
+            st.session_state["comp_text_a"] = "Criação de telas e componentes básicos em React e HTML/CSS. Correção de bugs simples de formulários, consumo de APIs REST prontas e testes manuais de interface."
+            st.session_state["comp_role_b"] = "Tech Lead & Arquiteta de Software Sênior"
+            st.session_state["comp_exp_b"] = 9
+            st.session_state["comp_text_b"] = "Definição de arquitetura de microsserviços em nuvem (AWS), mentoria técnica de engenheiros, decisões de trade-off de escalabilidade e segurança, code review semântico e alinhamento com C-Level."
+            st.rerun()
+
+    with col_p2:
+        if st.button("🏢 Assistente Adm vs. Analista Financeiro", use_container_width=True):
+            st.session_state["comp_role_a"] = "Assistente Administrativa"
+            st.session_state["comp_exp_a"] = 3
+            st.session_state["comp_text_a"] = "Preenchimento manual de planilhas de controle no Excel, lançamento e conferência de notas fiscais no sistema ERP, agendamento de reuniões para gerência, arquivo de comprovantes e elaboração de relatórios semanais."
+            st.session_state["comp_role_b"] = "Analista Financeiro / FP&A"
+            st.session_state["comp_exp_b"] = 5
+            st.session_state["comp_text_b"] = "Consolidação de relatórios mensais de receita e despesas, modelagem financeira preditiva, análise de desvios de orçamento, conciliação e confecção de apresentações para diretoria."
+            st.rerun()
+
+    with col_p3:
+        if st.button("🎨 Designer Gráfico vs. Advogado", use_container_width=True):
+            st.session_state["comp_role_a"] = "Designer Gráfico & Mídias Digitais"
+            st.session_state["comp_exp_a"] = 3
+            st.session_state["comp_text_a"] = "Criação de banners estáticos para redes sociais, recorte manual de fotos de produtos em e-commerce, ajuste de formatos para anúncios digitais e diagramação de e-books."
+            st.session_state["comp_role_b"] = "Advogada Associada / Contratos"
+            st.session_state["comp_exp_b"] = 4
+            st.session_state["comp_text_b"] = "Revisão de minutas de contratos de prestação de serviços e NDAs, pesquisa de jurisprudência em tribunais, redação de petições e negociação de cláusulas com clientes corporativos."
+            st.rerun()
+
+    st.markdown("<br>", unsafe_allow_html=True)
     col_perfil_a, col_perfil_b = st.columns(2)
 
     with col_perfil_a:
         st.markdown('<div class="compare-card">', unsafe_allow_html=True)
         st.markdown("#### 👤 Perfil A", help="Primeiro perfil para comparação")
-        comp_role_a = st.text_input("Cargo / Profissão (A):", placeholder="Ex: Analista Financeiro", key="comp_role_a")
-        comp_exp_a = st.slider("Anos de experiência (A):", 0, 30, 3, key="comp_exp_a")
+        comp_role_a = st.text_input("Cargo / Profissão (A):", value=st.session_state.get("comp_role_a", ""), placeholder="Ex: Assistente Administrativa", key="comp_role_a_input")
+        comp_exp_a = st.slider("Anos de experiência (A):", 0, 30, st.session_state.get("comp_exp_a", 3), key="comp_exp_a_slider")
         comp_text_a = st.text_area(
             "Descreva as atividades e habilidades (A):",
-            height=150,
-            placeholder="Ex: Consolido relatórios financeiros em Excel, análise de desvios...",
-            key="comp_text_a"
+            value=st.session_state.get("comp_text_a", ""),
+            height=130,
+            placeholder="Ex: Preencho planilhas diárias, atendo chamados...",
+            key="comp_text_a_input"
         )
         st.markdown('</div>', unsafe_allow_html=True)
 
     with col_perfil_b:
         st.markdown('<div class="compare-card compare-card-b">', unsafe_allow_html=True)
         st.markdown("#### 👤 Perfil B", help="Segundo perfil para comparação")
-        comp_role_b = st.text_input("Cargo / Profissão (B):", placeholder="Ex: Tech Lead / Arquiteta de Software", key="comp_role_b")
-        comp_exp_b = st.slider("Anos de experiência (B):", 0, 30, 5, key="comp_exp_b")
+        comp_role_b = st.text_input("Cargo / Profissão (B):", value=st.session_state.get("comp_role_b", ""), placeholder="Ex: Tech Lead / Arquiteta de Software", key="comp_role_b_input")
+        comp_exp_b = st.slider("Anos de experiência (B):", 0, 30, st.session_state.get("comp_exp_b", 6), key="comp_exp_b_slider")
         comp_text_b = st.text_area(
             "Descreva as atividades e habilidades (B):",
-            height=150,
-            placeholder="Ex: Defino arquitetura de microsserviços, mentoria de equipes...",
-            key="comp_text_b"
+            value=st.session_state.get("comp_text_b", ""),
+            height=130,
+            placeholder="Ex: Defino arquitetura de sistemas, mentoria de equipe...",
+            key="comp_text_b_input"
         )
         st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
     run_comparison = st.button(
-        "⚖️ COMPARAR CARREIRAS",
+        "⚖️ COMPARAR CARREIRAS AGORA",
         type="primary",
         use_container_width=True,
         key="btn_compare"
     )
 
     if run_comparison:
+        role_a_query = comp_role_a.strip() or "Perfil A"
+        role_b_query = comp_role_b.strip() or "Perfil B"
+
         if not comp_text_a.strip() and not comp_role_a.strip():
-            st.error("Por favor, preencha ao menos o Perfil A para comparar.")
+            st.error("Por favor, preencha o Perfil A para comparar.")
         elif not comp_text_b.strip() and not comp_role_b.strip():
-            st.error("Por favor, preencha ao menos o Perfil B para comparar.")
+            st.error("Por favor, preencha o Perfil B para comparar.")
         else:
             st.markdown('<div class="color-sep"></div>', unsafe_allow_html=True)
-            st.subheader("📊 Resultados da Comparação")
+            st.subheader("📊 Resultados Comparativos — Diagnóstico Diferenciado")
 
             col_prog_a, col_prog_b = st.columns(2)
 
             with col_prog_a:
-                with st.spinner(f"Analisando Perfil A: {comp_role_a or 'Perfil A'}..."):
+                with st.spinner(f"Processando Perfil A: {role_a_query}..."):
                     cv_a = comp_text_a if comp_text_a.strip() else f"Cargo: {comp_role_a}\nExperiência: {comp_exp_a} anos"
                     san_a, _ = security_agent.audit_and_sanitize(cv_a)
                     parsed_a = parser_agent.parse_profile(san_a, manual_role=comp_role_a, manual_experience_years=comp_exp_a)
@@ -878,10 +917,11 @@ with tab_compare:
                         role=parsed_a['role'], domain=parsed_a.get('domain', ''), cv_text=san_a
                     )
                     eval_a = evaluator_agent.evaluate_profile(parsed_a, bench_a)
-                st.success(f"✅ Perfil A analisado: **{parsed_a['role']}**")
+                    strat_a = strategist_agent.generate_strategy(parsed_a, bench_a, eval_a)
+                st.success(f"✅ Perfil A: **{parsed_a['role']}** ({parsed_a['seniority']})")
 
             with col_prog_b:
-                with st.spinner(f"Analisando Perfil B: {comp_role_b or 'Perfil B'}..."):
+                with st.spinner(f"Processando Perfil B: {role_b_query}..."):
                     cv_b = comp_text_b if comp_text_b.strip() else f"Cargo: {comp_role_b}\nExperiência: {comp_exp_b} anos"
                     san_b, _ = security_agent.audit_and_sanitize(cv_b)
                     parsed_b = parser_agent.parse_profile(san_b, manual_role=comp_role_b, manual_experience_years=comp_exp_b)
@@ -889,87 +929,78 @@ with tab_compare:
                         role=parsed_b['role'], domain=parsed_b.get('domain', ''), cv_text=san_b
                     )
                     eval_b = evaluator_agent.evaluate_profile(parsed_b, bench_b)
-                st.success(f"✅ Perfil B analisado: **{parsed_b['role']}**")
+                    strat_b = strategist_agent.generate_strategy(parsed_b, bench_b, eval_b)
+                st.success(f"✅ Perfil B: **{parsed_b['role']}** ({parsed_b['seniority']})")
 
             st.markdown("<br>", unsafe_allow_html=True)
 
-            # ── Tabela Comparativa ──
-            st.markdown("#### 📋 Tabela Comparativa")
-            col_tab_a, col_tab_b = st.columns(2)
-
-            def render_compare_metric(label, val_a, val_b, format_a="", format_b=""):
-                col1, col2 = st.columns(2)
-                with col1:
-                    st.metric(label=label + " (A)", value=f"{val_a}{format_a}")
-                with col2:
-                    st.metric(label=label + " (B)", value=f"{val_b}{format_b}")
-
+            # Métricas Comparativas
             risk_a = eval_a['final_automation_risk']
             risk_b = eval_b['final_automation_risk']
             aug_a = eval_a['final_augmentation_potential']
             aug_b = eval_b['final_augmentation_potential']
             routine_a = parsed_a['routine_tasks_ratio']
             routine_b = parsed_b['routine_tasks_ratio']
-            strat_a = parsed_a['strategic_tasks_ratio']
-            strat_b = parsed_b['strategic_tasks_ratio']
+            strat_val_a = parsed_a['strategic_tasks_ratio']
+            strat_val_b = parsed_b['strategic_tasks_ratio']
 
             col_c1, col_c2, col_c3, col_c4 = st.columns(4)
             with col_c1:
+                color_ra = "#D83C15" if risk_a >= 60 else ("#E07618" if risk_a >= 40 else "#2E7D32")
                 st.markdown(f"""
-                <div class="metric-card metric-card-danger" style="margin-bottom:0.5rem;">
+                <div class="metric-card" style="border-left:5px solid {color_ra};">
                     <div class="metric-label">Risco Automação A</div>
-                    <div class="metric-value" style="color:#D83C15;">{risk_a}%</div>
-                    <div class="metric-sub" style="color:#D83C15;">{eval_a['risk_level']}</div>
+                    <div class="metric-value" style="color:{color_ra};">{risk_a}%</div>
+                    <div class="metric-sub" style="color:{color_ra}; font-weight:700;">{eval_a['risk_level']}</div>
                 </div>
                 """, unsafe_allow_html=True)
             with col_c2:
+                color_rb = "#D83C15" if risk_b >= 60 else ("#E07618" if risk_b >= 40 else "#2E7D32")
                 st.markdown(f"""
-                <div class="metric-card metric-card-danger" style="margin-bottom:0.5rem;">
+                <div class="metric-card" style="border-left:5px solid {color_rb};">
                     <div class="metric-label">Risco Automação B</div>
-                    <div class="metric-value" style="color:#CB1D4E;">{risk_b}%</div>
-                    <div class="metric-sub" style="color:#CB1D4E;">{eval_b['risk_level']}</div>
+                    <div class="metric-value" style="color:{color_rb};">{risk_b}%</div>
+                    <div class="metric-sub" style="color:{color_rb}; font-weight:700;">{eval_b['risk_level']}</div>
                 </div>
                 """, unsafe_allow_html=True)
             with col_c3:
                 st.markdown(f"""
-                <div class="metric-card metric-card-info" style="margin-bottom:0.5rem;">
+                <div class="metric-card" style="border-left:5px solid #F7AF20;">
                     <div class="metric-label">Potencial Aumento A</div>
-                    <div class="metric-value" style="color:#E6228C;">+{aug_a}%</div>
-                    <div class="metric-sub" style="color:#E6228C;">{eval_a.get('productivity_multiplier','N/A')}</div>
+                    <div class="metric-value" style="color:#E07618;">+{aug_a}%</div>
+                    <div class="metric-sub" style="color:#E07618; font-weight:700;">{eval_a.get('productivity_multiplier','N/A')}</div>
                 </div>
                 """, unsafe_allow_html=True)
             with col_c4:
                 st.markdown(f"""
-                <div class="metric-card metric-card-info" style="margin-bottom:0.5rem;">
+                <div class="metric-card" style="border-left:5px solid #E6228C;">
                     <div class="metric-label">Potencial Aumento B</div>
                     <div class="metric-value" style="color:#951165;">+{aug_b}%</div>
-                    <div class="metric-sub" style="color:#951165;">{eval_b.get('productivity_multiplier','N/A')}</div>
+                    <div class="metric-sub" style="color:#951165; font-weight:700;">{eval_b.get('productivity_multiplier','N/A')}</div>
                 </div>
                 """, unsafe_allow_html=True)
 
             st.markdown("<br>", unsafe_allow_html=True)
 
-            # ── Gráfico de Barras Comparativo ──
-            st.markdown("#### 📊 Gráfico Comparativo de Indicadores")
+            # ── Gráfico de Barras e Radar ──
             col_bar, col_radar_comp = st.columns(2)
 
             with col_bar:
-                label_a = parsed_a['role'][:22] + "..." if len(parsed_a['role']) > 25 else parsed_a['role']
-                label_b = parsed_b['role'][:22] + "..." if len(parsed_b['role']) > 25 else parsed_b['role']
+                st.markdown("##### 📊 Comparativo de Indicadores (%)")
+                label_a = parsed_a['role'][:20]
+                label_b = parsed_b['role'][:20]
 
                 fig_bar = go.Figure()
-                categories = ["Risco de Automação (%)", "Potencial de Aumento (%)", "Tarefas Repetitivas (%)", "Tarefas Cognitivas (%)"]
-                vals_a = [risk_a, aug_a, routine_a, strat_a]
-                vals_b = [risk_b, aug_b, routine_b, strat_b]
+                categories = ["Risco Automação", "Potencial Aumento", "Tarefas Repetitivas", "Tarefas Estratégicas"]
+                vals_a = [risk_a, aug_a, routine_a, strat_val_a]
+                vals_b = [risk_b, aug_b, routine_b, strat_val_b]
 
                 fig_bar.add_trace(go.Bar(
                     name=f"A: {label_a}",
                     x=categories,
                     y=vals_a,
                     marker_color="#F7AF20",
-                    marker_line_color="#E07618",
-                    marker_line_width=1.5,
-                    text=vals_a,
+                    text=[f"{v}%" for v in vals_a],
                     textposition='outside'
                 ))
                 fig_bar.add_trace(go.Bar(
@@ -977,9 +1008,7 @@ with tab_compare:
                     x=categories,
                     y=vals_b,
                     marker_color="#E6228C",
-                    marker_line_color="#951165",
-                    marker_line_width=1.5,
-                    text=vals_b,
+                    text=[f"{v}%" for v in vals_b],
                     textposition='outside'
                 ))
 
@@ -988,15 +1017,14 @@ with tab_compare:
                     paper_bgcolor="rgba(0,0,0,0)",
                     plot_bgcolor="#FAFAFA",
                     margin=dict(l=20, r=20, t=30, b=60),
-                    height=340,
+                    height=350,
                     legend=dict(orientation="h", yanchor="bottom", y=-0.35, xanchor="center", x=0.5),
-                    yaxis=dict(range=[0, 110], gridcolor="#F0F0F0"),
-                    xaxis=dict(tickfont=dict(size=10))
+                    yaxis=dict(range=[0, 115], gridcolor="#F0F0F0")
                 )
                 st.plotly_chart(fig_bar, use_container_width=True)
 
-            # ── Radar Chart Comparativo ──
             with col_radar_comp:
+                st.markdown("##### 🎯 Radar de Competências Sobreposto")
                 keys_r = list(eval_a["radar_labels"].keys())
                 labels_r = list(eval_a["radar_labels"].values())
                 curr_a_vals = [eval_a["radar_current"].get(k, 5) for k in keys_r]
@@ -1013,7 +1041,7 @@ with tab_compare:
                     fill='toself',
                     name=f"A: {label_a}",
                     line=dict(color='#F7AF20', width=2.5),
-                    fillcolor='rgba(247, 175, 32, 0.2)'
+                    fillcolor='rgba(247, 175, 32, 0.25)'
                 ))
                 fig_rad.add_trace(go.Scatterpolar(
                     r=curr_b_cycle,
@@ -1021,7 +1049,7 @@ with tab_compare:
                     fill='toself',
                     name=f"B: {label_b}",
                     line=dict(color='#E6228C', width=2.5),
-                    fillcolor='rgba(230, 34, 140, 0.2)'
+                    fillcolor='rgba(230, 34, 140, 0.25)'
                 ))
                 fig_rad.update_layout(
                     polar=dict(
@@ -1031,37 +1059,59 @@ with tab_compare:
                     showlegend=True,
                     legend=dict(orientation="h", yanchor="bottom", y=-0.3, xanchor="center", x=0.5),
                     margin=dict(l=30, r=30, t=20, b=50),
-                    height=340,
+                    height=350,
                     paper_bgcolor="rgba(0,0,0,0)",
                     plot_bgcolor="rgba(0,0,0,0)"
                 )
                 st.plotly_chart(fig_rad, use_container_width=True)
 
-            # ── Tabela de Detalhes ──
-            st.markdown("#### 🗂️ Detalhes por Perfil")
-            col_det_a, col_det_b = st.columns(2)
-            with col_det_a:
+            # ── Auditoria de Tarefas Comparativa Lado a Lado ──
+            st.markdown("#### 📋 Comparativo de Tarefas Ameaçadas vs. Fortalezas")
+            col_comp_tasks_a, col_comp_tasks_b = st.columns(2)
+
+            with col_comp_tasks_a:
                 st.markdown(f"""
                 <div class="section-card" style="border-left-color:#F7AF20;">
-                    <strong>👤 Perfil A — {parsed_a['role']}</strong><br>
-                    <span style="font-size:0.85rem; color:#6B7280;">
-                        Senioridade: <strong>{parsed_a['seniority']}</strong><br>
-                        Experiência: <strong>{comp_exp_a} anos</strong><br>
-                        Rotina: <strong>{routine_a}% repetitiva / {strat_a}% cognitiva</strong>
-                    </span>
-                </div>
+                    <h5 style="color:#780D34; margin:0 0 0.5rem 0;">👤 Perfil A: {parsed_a['role']}</h5>
+                    <p style="font-size:0.85rem; color:#6B7280; margin-bottom:0.8rem;">
+                        <strong>Setor:</strong> {bench_a.get('category')}<br>
+                        <strong>Rotina:</strong> {routine_a}% repetitiva / {strat_val_a}% cognitiva
+                    </p>
+                    <strong style="color:#D83C15; font-size:0.88rem;">⚠️ Tarefas Ameaçadas até 2028:</strong>
+                    <ul style="font-size:0.83rem; color:#4B5563; margin-top:0.3rem;">
                 """, unsafe_allow_html=True)
-            with col_det_b:
+                for t in bench_a.get("declining_tasks", [])[:3]:
+                    st.markdown(f"- <span style='font-size:0.85rem;'>{t}</span>", unsafe_allow_html=True)
+                st.markdown("""
+                    </ul>
+                    <strong style="color:#2E7D32; font-size:0.88rem;">🛡️ Fortalezas Humanas:</strong>
+                    <ul style="font-size:0.83rem; color:#4B5563; margin-top:0.3rem;">
+                """, unsafe_allow_html=True)
+                for t in bench_a.get("human_core_tasks", [])[:3]:
+                    st.markdown(f"- <span style='font-size:0.85rem;'>{t}</span>", unsafe_allow_html=True)
+                st.markdown("</ul></div>", unsafe_allow_html=True)
+
+            with col_comp_tasks_b:
                 st.markdown(f"""
                 <div class="section-card section-card-pink" style="border-left-color:#E6228C;">
-                    <strong>👤 Perfil B — {parsed_b['role']}</strong><br>
-                    <span style="font-size:0.85rem; color:#6B7280;">
-                        Senioridade: <strong>{parsed_b['seniority']}</strong><br>
-                        Experiência: <strong>{comp_exp_b} anos</strong><br>
-                        Rotina: <strong>{routine_b}% repetitiva / {strat_b}% cognitiva</strong>
-                    </span>
-                </div>
+                    <h5 style="color:#951165; margin:0 0 0.5rem 0;">👤 Perfil B: {parsed_b['role']}</h5>
+                    <p style="font-size:0.85rem; color:#6B7280; margin-bottom:0.8rem;">
+                        <strong>Setor:</strong> {bench_b.get('category')}<br>
+                        <strong>Rotina:</strong> {routine_b}% repetitiva / {strat_val_b}% cognitiva
+                    </p>
+                    <strong style="color:#D83C15; font-size:0.88rem;">⚠️ Tarefas Ameaçadas até 2028:</strong>
+                    <ul style="font-size:0.83rem; color:#4B5563; margin-top:0.3rem;">
                 """, unsafe_allow_html=True)
+                for t in bench_b.get("declining_tasks", [])[:3]:
+                    st.markdown(f"- <span style='font-size:0.85rem;'>{t}</span>", unsafe_allow_html=True)
+                st.markdown("""
+                    </ul>
+                    <strong style="color:#2E7D32; font-size:0.88rem;">🛡️ Fortalezas Humanas:</strong>
+                    <ul style="font-size:0.83rem; color:#4B5563; margin-top:0.3rem;">
+                """, unsafe_allow_html=True)
+                for t in bench_b.get("human_core_tasks", [])[:3]:
+                    st.markdown(f"- <span style='font-size:0.85rem;'>{t}</span>", unsafe_allow_html=True)
+                st.markdown("</ul></div>", unsafe_allow_html=True)
 
 
 # ─────────────────────────────────────────────────────────
