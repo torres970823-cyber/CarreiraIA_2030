@@ -1,6 +1,6 @@
 """
 Agente Diagnosticador de Risco e Simbiose de IA (AIEvaluatorAgent)
-Cálculos econométricos granulares, matriz de simbiose e radar de competências diferenciado por perfil.
+Cálculos econométricos granulares, matriz de simbiose e radar de competências diferenciado por perfil e domínio.
 """
 
 from typing import Dict, Any, List
@@ -14,45 +14,44 @@ class AIEvaluatorAgent:
     def evaluate_profile(self, parsed_profile: Dict[str, Any], benchmark: Dict[str, Any]) -> Dict[str, Any]:
         """
         Executa a avaliação quantitativa e qualitativa do profissional frente ao horizonte 2030.
-        Gera resultados altamente diferenciados baseados nas características individuais do perfil.
+        Gera resultados altamente diferenciados baseados nas características individuais e no domínio.
         """
         base_risk = benchmark.get("automation_risk_score", 50)
         base_augmentation = benchmark.get("augmentation_potential_score", 75)
 
-        # Ajuste dinâmico baseado no perfil individual do usuário
         risk_adjustment = 0
         augmentation_boost = 0
 
         # 1. Proporção de tarefas rotineiras vs. estratégicas
         routine_ratio = parsed_profile.get("routine_tasks_ratio", 50)
         if routine_ratio >= 75:
-            risk_adjustment += 10
+            risk_adjustment += 8
             augmentation_boost -= 6
         elif routine_ratio >= 55:
-            risk_adjustment += 5
+            risk_adjustment += 4
         elif routine_ratio <= 25:
-            risk_adjustment -= 12
+            risk_adjustment -= 10
             augmentation_boost += 6
         elif routine_ratio <= 40:
-            risk_adjustment -= 6
+            risk_adjustment -= 5
 
         # 2. Senioridade e anos de experiência
         seniority = parsed_profile.get("seniority", "Pleno")
         years_exp = parsed_profile.get("years_experience", 3)
 
         if "Sênior" in seniority or "Liderança" in seniority or years_exp >= 8:
-            risk_adjustment -= 10
-            augmentation_boost += 8
+            risk_adjustment -= 8
+            augmentation_boost += 6
         elif "Júnior" in seniority or "Iniciante" in seniority or years_exp <= 2:
-            risk_adjustment += 8
+            risk_adjustment += 6
             augmentation_boost -= 4
 
         # 3. Literacia prévia em IA
         if parsed_profile.get("has_ai_experience", False):
-            risk_adjustment -= 8
-            augmentation_boost += 10
+            risk_adjustment -= 6
+            augmentation_boost += 8
         else:
-            risk_adjustment += 4
+            risk_adjustment += 3
 
         # Cálculo final do Risco de Automação (limitado entre 10% e 98%)
         final_risk = max(10, min(98, base_risk + risk_adjustment))
@@ -88,27 +87,88 @@ class AIEvaluatorAgent:
             "especializacao_estrategica": 8
         })
 
-        # Estimação do perfil atual do usuário de forma granular
+        # Estimação do perfil atual do usuário de forma calibrada por domínio
+        domain = parsed_profile.get("domain", "")
         has_ai = parsed_profile.get("has_ai_experience", False)
         is_senior = "Sênior" in seniority or "Liderança" in seniority
         detected_soft = parsed_profile.get("detected_soft_skills", [])
         soft_str = " ".join(detected_soft).lower()
 
-        # Cálculo granular por habilidade
-        val_analitico = min(9, 4 + (years_exp // 3) + (2 if is_senior else 0) + (1 if "analítico" in soft_str or "crítico" in soft_str else 0))
-        val_ia = 8 if has_ai else (3 if routine_ratio >= 65 else 5)
-        val_criatividade = 8 if "criatividade" in soft_str else (7 if is_senior else (6 if years_exp >= 4 else 4))
-        val_lideranca = min(10, 3 + (years_exp // 2) + (3 if is_senior else 0) + (1 if "liderança" in soft_str else 0))
-        val_resiliencia = min(9, 5 + (2 if is_senior else 0) + (1 if has_ai else 0) + (1 if "resiliência" in soft_str or "adaptabilidade" in soft_str else 0))
-        val_estrategica = min(10, 3 + (years_exp // 2) + (3 if is_senior else 0) + (1 if "estratégia" in soft_str or "decisão" in soft_str else 0))
+        # Afinidade por domínio para o Radar
+        if "Saúde" in domain:
+            analitico_base = 7
+            ia_base = 6 if has_ai else 4
+            criat_base = 6
+            lider_base = 8
+            resil_base = 8
+            estrat_base = 8
+        elif "Tecnologia" in domain:
+            analitico_base = 8
+            ia_base = 9 if has_ai else 6
+            criat_base = 7
+            lider_base = 5 + (3 if is_senior else 0)
+            resil_base = 8
+            estrat_base = 6 + (3 if is_senior else 0)
+        elif "Jurídico" in domain:
+            analitico_base = 9
+            ia_base = 6 if has_ai else 4
+            criat_base = 6
+            lider_base = 7
+            resil_base = 7
+            estrat_base = 9
+        elif "Design" in domain:
+            analitico_base = 6
+            ia_base = 8 if has_ai else 6
+            criat_base = 9
+            lider_base = 6
+            resil_base = 8
+            estrat_base = 6
+        elif "Economia" in domain or "Finanças" in domain:
+            analitico_base = 8
+            ia_base = 7 if has_ai else 4
+            criat_base = 5
+            lider_base = 6
+            resil_base = 7
+            estrat_base = 7
+        elif "Administração" in domain:
+            analitico_base = 5
+            ia_base = 5 if has_ai else 3
+            criat_base = 4
+            lider_base = 5
+            resil_base = 6
+            estrat_base = 4
+        elif "Educação" in domain:
+            analitico_base = 7
+            ia_base = 6 if has_ai else 4
+            criat_base = 8
+            lider_base = 9
+            resil_base = 8
+            estrat_base = 7
+        elif "Vendas" in domain:
+            analitico_base = 6
+            ia_base = 6 if has_ai else 4
+            criat_base = 7
+            lider_base = 9
+            resil_base = 8
+            estrat_base = 7
+        else:
+            analitico_base = 6
+            ia_base = 6 if has_ai else 4
+            criat_base = 6
+            lider_base = 6
+            resil_base = 6
+            estrat_base = 6
+
+        # Modulação pelos anos de experiência
+        exp_mod = min(2, years_exp // 4)
 
         current_radar = {
-            "pensamento_analitico": max(2, min(10, val_analitico)),
-            "orquestracao_ia": max(2, min(10, val_ia)),
-            "criatividade_inovacao": max(2, min(10, val_criatividade)),
-            "lideranca_influencia": max(2, min(10, val_lideranca)),
-            "resiliencia_adaptabilidade": max(2, min(10, val_resiliencia)),
-            "especializacao_estrategica": max(2, min(10, val_estrategica))
+            "pensamento_analitico": max(2, min(10, analitico_base + exp_mod + (1 if "analítico" in soft_str else 0))),
+            "orquestracao_ia": max(2, min(10, ia_base + (1 if has_ai else 0))),
+            "criatividade_inovacao": max(2, min(10, criat_base + exp_mod + (1 if "criatividade" in soft_str else 0))),
+            "lideranca_influencia": max(2, min(10, lider_base + exp_mod + (1 if is_senior else 0))),
+            "resiliencia_adaptabilidade": max(2, min(10, resil_base + (1 if is_senior else 0))),
+            "especializacao_estrategica": max(2, min(10, estrat_base + exp_mod + (1 if is_senior else 0)))
         }
 
         # Identificação de Gaps Críticos (diferença >= 3 pontos)
