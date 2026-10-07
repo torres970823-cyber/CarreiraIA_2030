@@ -1,0 +1,850 @@
+{
+  "macro_stats_2030": {
+    "source": "World Economic Forum - Future of Jobs Report 2025/2030 & McKinsey Global Institute",
+    "net_job_creation": "+78 milhões de postos líquidos projetados até 2030",
+    "new_roles_created": "170 milhões de novos postos emergentes",
+    "displaced_roles": "92 milhões de postos rotineiros ou transacionais deslocados",
+    "skills_disrupted": "39% das competências essenciais atuais serão transformadas ou desvalorizadas até 2030",
+    "top_growing_skills": [
+      "Pensamento Analítico e Crítico",
+      "Literacia em IA e Big Data",
+      "Orquestração Agêntica e Automação de Fluxos",
+      "Pensamento Criativo e Inovação",
+      "Resiliência, Flexibilidade e Agilidade Cognitiva",
+      "Liderança e Inteligência Interpessoal",
+      "Curiosidade e Aprendizado Contínuo (Lifelong Learning)",
+      "Gestão de Confiança, Ética e Governança de IA"
+    ],
+    "top_declining_skills": [
+      "Digitação e Processamento Manual de Dados",
+      "Cálculo Manual e Auditoria Documental Básica",
+      "Redação Padronizada e Geração de Conteúdo Genérico",
+      "Codificação Sintática Básica / Boilerplate sem Arquitetura",
+      "Atendimento ao Cliente Transacional / Roteirizado",
+      "Gestão de Prazos Tradicional sem Ferramentas Cognitivas",
+      "Instalação e Manutenção de Sistemas Básicos de TI"
+    ]
+  },
+  "occupations": [
+    {
+      "id": "dev_junior",
+      "title": "Desenvolvedor(a) de Software Júnior / Trainee",
+      "category": "Tecnologia e Engenharia de Software",
+      "automation_risk_score": 68,
+      "ai_exposure_level": "Alto",
+      "augmentation_potential_score": 88,
+      "skills_radar_ideal": {
+        "pensamento_analitico": 8,
+        "orquestracao_ia": 9,
+        "criatividade_inovacao": 7,
+        "lideranca_influencia": 5,
+        "resiliencia_adaptabilidade": 9,
+        "especializacao_estrategica": 7
+      },
+      "declining_tasks": [
+        "Escrita de código boilerplate, CRUDs e getters/setters",
+        "Conversão manual de mockups visuais para HTML/CSS simples",
+        "Resolução de bugs sintáticos elementares",
+        "Elaboração de testes unitários repetitivos",
+        "Documentação básica de APIs manuais"
+      ],
+      "augmented_tasks": [
+        "Prompt engineering e uso de assistentes de código (Copilot, Cursor, Gemini Code Assist)",
+        "Refatoração acelerada com ferramentas de IA",
+        "Prototipagem de componentes em minutos",
+        "Geração de dados sintéticos para testes"
+      ],
+      "human_core_tasks": [
+        "Compreensão profunda das regras de negócio do cliente",
+        "Decisões de arquitetura de software e escolha de trade-offs",
+        "Revisão crítica de segurança e prevenção de alucinações de código",
+        "Comunicação empática com Product Owners e designers"
+      ],
+      "declining_skills": [
+        "Memorização de sintaxe de frameworks legados",
+        "Codificação manual linha por linha sem copiloto",
+        "Configuração mecânica de build tools",
+        "Depuração manual sem telemetria moderna"
+      ],
+      "emerging_skills_2030": [
+        "Orquestração Agêntica de Código (Claude Code, Antigravity, AutoDev)",
+        "Engenharia de Contexto e System Prompts",
+        "Arquitetura de Sistemas Distribuídos e Micro-frontends",
+        "Segurança de Software e Auditoria de Código Gerado por IA",
+        "Literacia em Bancos Vetoriais e RAG (Retrieval-Augmented Generation)"
+      ],
+      "transition_pivots": [
+        "Engenheiro(a) de IA Aplicada e Integração de LLMs",
+        "Arquiteto(a) de Software Orientado a Agentes",
+        "Especialista em Engenharia de Plataforma (Platform Engineering)"
+      ],
+      "recommended_certifications": [
+        "DeepLearning.AI - AI Engineering & LLM Application Building",
+        "AWS Certified Solutions Architect / Cloud AI Practitioner",
+        "Docker & Kubernetes Certified Application Developer"
+      ],
+      "action_plan_phases": {
+        "2026": "Integrar copilotos de IA ao fluxo diário. Parar de codificar sintaxe pura e focar em lógica de domínio, design patterns e clean architecture.",
+        "2027_2028": "Migrar para o papel de Orquestrador de Agentes de Software. Dominar RAG, fine-tuning e testes automatizados de segurança de LLMs.",
+        "2029_2030": "Atuar como Arquiteto de Negócios e Soluções de IA, liderando pipelines autônomos de desenvolvimento e garantindo governança."
+      }
+    },
+    {
+      "id": "dev_senior",
+      "title": "Engenheiro(a) / Desenvolvedor(a) de Software Sênior ou Arquiteto",
+      "category": "Tecnologia e Engenharia de Software",
+      "automation_risk_score": 32,
+      "ai_exposure_level": "Moderado",
+      "augmentation_potential_score": 95,
+      "skills_radar_ideal": {
+        "pensamento_analitico": 10,
+        "orquestracao_ia": 9,
+        "criatividade_inovacao": 9,
+        "lideranca_influencia": 8,
+        "resiliencia_adaptabilidade": 8,
+        "especializacao_estrategica": 10
+      },
+      "declining_tasks": [
+        "Code reviews manuais de estilo e formatação",
+        "Estimativas de esforço baseadas em linhas de código",
+        "Escrever documentação técnica inicial do zero",
+        "Configurações repetitivas de infraestrutura como código"
+      ],
+      "augmented_tasks": [
+        "Modelagem de arquitetura auxiliada por IA com validação de grafos de dependência",
+        "Benchmarking automatizado de performance e escalabilidade",
+        "Detecção em tempo real de vulnerabilidades e ataques de supply chain"
+      ],
+      "human_core_tasks": [
+        "Trade-offs arquiteturais complexos (custo, latência, resiliência, privacidade)",
+        "Mentoria de engenheiros e alinhamento com stakeholders executivos",
+        "Governança ética e conformidade legal de dados de modelos",
+        "Decisões de negócios de missão crítica (tolerância a falhas zero)"
+      ],
+      "declining_skills": [
+        "Centralização de conhecimento de rotinas de infraestrutura",
+        "Revisão de código focada em sintaxe em vez de semântica e segurança"
+      ],
+      "emerging_skills_2030": [
+        "Design de Sistemas Agênticos Autônomos",
+        "Observabilidade de Modelos de IA e Gestão de Deriva (Drift)",
+        "Engenharia de Infraestrutura para Cargas de Trabalho de IA (GPUs, VRAM, TPU)",
+        "Liderança Técnica Híbrida (Humanos + Agentes de IA)"
+      ],
+      "transition_pivots": [
+        "Chief Technology Officer (CTO) Orientado a IA",
+        "Arquiteto(a) Corporativo(a) de Sistemas Autônomos",
+        "Especialista em Segurança e Confiabilidade de IA (AI Safety Engineer)"
+      ],
+      "recommended_certifications": [
+        "Google Cloud Professional Cloud Architect / Machine Learning Engineer",
+        "Certified Information Systems Security Professional (CISSP)",
+        "MIT Professional Certificate in Artificial Intelligence Architecture"
+      ],
+      "action_plan_phases": {
+        "2026": "Implementar esteiras de desenvolvimento agêntico na equipe (Claude Code, Spec-Driven Development). Automatizar tarefas repetitivas do time.",
+        "2027_2028": "Evoluir a arquitetura corporativa para suportar agentes autônomos, barramentos de eventos assíncronos e memórias de longo prazo vetoriais.",
+        "2029_2030": "Liderar a governança de IA na organização, garantindo que o ecossistema tecnológico entregue valor estratégico com segurança e escalabilidade."
+      }
+    },
+    {
+      "id": "qa_tester",
+      "title": "Analista de QA / Testes de Software",
+      "category": "Tecnologia e Engenharia de Software",
+      "automation_risk_score": 74,
+      "ai_exposure_level": "Crítico",
+      "augmentation_potential_score": 85,
+      "skills_radar_ideal": {
+        "pensamento_analitico": 9,
+        "orquestracao_ia": 9,
+        "criatividade_inovacao": 7,
+        "lideranca_influencia": 6,
+        "resiliencia_adaptabilidade": 8,
+        "especializacao_estrategica": 8
+      },
+      "declining_tasks": [
+        "Execução manual de casos de teste de regressão",
+        "Preenchimento manual de relatórios de bugs repetitivos",
+        "Criação mecânica de scripts de teste automatizado (Selenium/Cypress básicos)",
+        "Testes de interface visual estática"
+      ],
+      "augmented_tasks": [
+        "Geração autônoma de testes baseados em análise de comportamento de usuários por IA",
+        "Testes visuais baseados em modelos de visão computacional",
+        "Simulação de milhares de cenários de estresse com agentes concorrentes"
+      ],
+      "human_core_tasks": [
+        "Estratégia de confiabilidade do produto e experiência do usuário (UX Quality)",
+        "Auditoria de vieses e segurança de saídas de IA",
+        "Validação de conformidade regulatória (LGPD, ISO, FDA, BACEN)",
+        "Engenharia de resiliência e simulação de cenários de caos imprevistos"
+      ],
+      "declining_skills": [
+        "Testes puramente manuais sem automação",
+        "Elaboração de planos de teste lineares e engessados"
+      ],
+      "emerging_skills_2030": [
+        "AI Red Teaming (Testes de ataque e vulnerabilidade em LLMs e Agentes)",
+        "Validação de Alucinações e Métricas de Confiabilidade de IA",
+        "Engenharia de Confiabilidade de Sistemas (SRE) com IA",
+        "Orquestração de Testes com Agentes Autônomos"
+      ],
+      "transition_pivots": [
+        "Especialista em AI Quality & Red Teaming",
+        "Site Reliability Engineer (SRE)",
+        "Product Quality & Compliance Strategist"
+      ],
+      "recommended_certifications": [
+        "ISTQB Certified Tester - AI Testing Specialty",
+        "Certified AI Red Teamer (OWASP / SANS)",
+        "AWS Certified DevOps Engineer"
+      ],
+      "action_plan_phases": {
+        "2026": "Substituir testes manuais por pipelines de testes gerados por IA. Especializar-se em testes de borda e regressão contínua.",
+        "2027_2028": "Capacitar-se em 'AI Red Teaming': testar segurança, injeção de prompt e robustez de modelos e agentes inteligentes.",
+        "2029_2030": "Tornar-se Guardião de Confiabilidade de Sistemas de IA (AI Safety & Quality Director), liderando certificações e auditorias formais."
+      }
+    },
+    {
+      "id": "assistente_adm",
+      "title": "Assistente Administrativo(a) / Escriturário",
+      "category": "Administração e Operações",
+      "automation_risk_score": 86,
+      "ai_exposure_level": "Crítico",
+      "augmentation_potential_score": 60,
+      "skills_radar_ideal": {
+        "pensamento_analitico": 8,
+        "orquestracao_ia": 8,
+        "criatividade_inovacao": 7,
+        "lideranca_influencia": 8,
+        "resiliencia_adaptabilidade": 9,
+        "especializacao_estrategica": 7
+      },
+      "declining_tasks": [
+        "Digitação e alimentação manual de planilhas e formulários",
+        "Agendamento rotineiro de reuniões e envio de emails padrão",
+        "Arquivo e organização manual de notas fiscais e recibos",
+        "Elaboração mecânica de relatórios operacionais semanais",
+        "Triagem física ou digital de correspondências e tickets"
+      ],
+      "augmented_tasks": [
+        "Uso de assistentes virtuais para síntese de documentos e reuniões",
+        "Criação de fluxos de automação no-code/low-code (Zapier, Power Automate, n8n)",
+        "Geração rápida de minutas e apresentações com IA generativa"
+      ],
+      "human_core_tasks": [
+        "Relacionamento interpessoal com clientes VIP e fornecedores estratégicos",
+        "Resolução de conflitos de agenda e imprevistos com empatia",
+        "Tomada de decisão em situações ambíguas sem protocolo prévio",
+        "Organização e facilitação de eventos corporativos de alto engajamento"
+      ],
+      "declining_skills": [
+        "Operação básica de Excel sem automação",
+        "Redação mecânica de atas e correspondências formais",
+        "Manuseio de arquivos manuais"
+      ],
+      "emerging_skills_2030": [
+        "Orquestração de Automação de Escritório (RPA + Agentes de IA)",
+        "Gestão de Projetos Ágeis e Coordenação de Equipes",
+        "Análise e Visualização de Dados de Negócio (PowerBI / Looker)",
+        "Comunicação Corporativa e Gestão de Stakeholders"
+      ],
+      "transition_pivots": [
+        "Coordenador(a) de Operações de Negócios (BizOps)",
+        "Product Operations Specialist",
+        "Especialista em Automação de Processos de Negócio (No-Code/AI Ops)"
+      ],
+      "recommended_certifications": [
+        "Microsoft Power Platform App Maker / Automate Certified",
+        "Certificação em Gestão de Projetos (Google Project Management / CAPM)",
+        "Scrum Master Certified (PSM I)"
+      ],
+      "action_plan_phases": {
+        "2026": "Abandonar tarefas manuais de planilha. Aprender automação com Power Automate, n8n e copilotos de escritório (Microsoft 365 Copilot).",
+        "2027_2028": "Migrar para o papel de Analista de Operações (BizOps). Liderar a implantação de ferramentas digitais no departamento.",
+        "2029_2030": "Consolidar-se como Coordenador de Eficiência Operacional e Projetos, unindo gestão humana a fluxos 100% automatizados."
+      }
+    },
+    {
+      "id": "analista_financeiro",
+      "title": "Analista Financeiro / Planejamento Orçamentário (FP&A)",
+      "category": "Finanças e Contabilidade",
+      "automation_risk_score": 58,
+      "ai_exposure_level": "Alto",
+      "augmentation_potential_score": 92,
+      "skills_radar_ideal": {
+        "pensamento_analitico": 10,
+        "orquestracao_ia": 9,
+        "criatividade_inovacao": 8,
+        "lideranca_influencia": 8,
+        "resiliencia_adaptabilidade": 8,
+        "especializacao_estrategica": 9
+      },
+      "declining_tasks": [
+        "Consolidação manual de extratos bancários e ERP",
+        "Modelagem orçamentária estática em planilhas pesadas",
+        "Geração de relatórios mensais descritivos ('o que aconteceu no mês')",
+        "Checagem mecânica de desvios orçamentários simples"
+      ],
+      "augmented_tasks": [
+        "Previsão preditiva de fluxo de caixa e receita com modelos de machine learning",
+        "Análise de sensibilidade em tempo real com cenários de estresse simulados por IA",
+        "Detecção de anomalias contábeis e fraudes em milissegundos"
+      ],
+      "human_core_tasks": [
+        "Narrativa estratégica financeira (Storytelling de dados para C-Level e investidores)",
+        "Negociação de termos de financiamento, M&A (fusões e aquisições) e covenants",
+        "Avaliação de risco geopolítico e macroeconômico com julgamento humano",
+        "Alinhamento do orçamento com a cultura e a estratégia de inovação da empresa"
+      ],
+      "declining_skills": [
+        "Cálculos manuais em Excel sem scripts ou conectores de dados",
+        "Análise puramente retrospectiva (olhar apenas o histórico passado)",
+        "Elaboração manual de apresentações em slides estáticos"
+      ],
+      "emerging_skills_2030": [
+        "Finanças Preditivas e Prescritivas com Python/IA",
+        "Engenharia de Cenários Financeiros em Tempo Real",
+        "Storytelling de Dados Financeiros e Comunicação com Investidores",
+        "Governança ESG e Finanças Sustentáveis"
+      ],
+      "transition_pivots": [
+        "Especialista em Strategic Finance & Corporate Development",
+        "AI Financial Strategist",
+        "Diretor(a) Financeiro(a) / CFO Orientado a Dados"
+      ],
+      "recommended_certifications": [
+        "Chartered Financial Analyst (CFA) / FP&A Professional",
+        "Python for Financial Analysis & Machine Learning (Wharton / Coursera)",
+        "Certified Corporate FP&A Professional (AFP)"
+      ],
+      "action_plan_phases": {
+        "2026": "Substituir planilhas lentas por dashboards conectados a bancos de dados com IA. Adotar modelos preditivos para previsões orçamentárias.",
+        "2027_2028": "Aprender análise de dados em Python/SQL e integração com modelos de linguagem para gerar insights preditivos automáticos.",
+        "2029_2030": "Posicionar-se como Conselheiro Estratégico de Capital (Strategic Financial Partner), orientando decisões de fusão, aquisição e inovação."
+      }
+    },
+    {
+      "id": "contador_auditor",
+      "title": "Contador(a) / Auditor(a) Fiscal",
+      "category": "Finanças e Contabilidade",
+      "automation_risk_score": 79,
+      "ai_exposure_level": "Crítico",
+      "augmentation_potential_score": 82,
+      "skills_radar_ideal": {
+        "pensamento_analitico": 9,
+        "orquestracao_ia": 8,
+        "criatividade_inovacao": 7,
+        "lideranca_influencia": 8,
+        "resiliencia_adaptabilidade": 8,
+        "especializacao_estrategica": 9
+      },
+      "declining_tasks": [
+        "Classificação contábil manual de lançamentos",
+        "Conferência manual de notas fiscais e guias de impostos (SPED, DARF)",
+        "Cálculo de alíquotas padrão de impostos sobre consumo",
+        "Conciliação contábil entre balancete e contas bancárias"
+      ],
+      "augmented_tasks": [
+        "Auditoria contínua por IA que detecta discrepâncias em 100% das transações",
+        "Simulação de impactos da reforma tributária com algoritmos inteligentes",
+        "Automação completa da entrega de obrigações acessórias"
+      ],
+      "human_core_tasks": [
+        "Planejamento tributário consultivo e estruturação societária complexa",
+        "Defesa administrativa e relacionamento com autoridades fiscais",
+        "Consultoria de valuation e reestruturação de empresas em crise",
+        "Ética e garantia de conformidade contra fraudes deliberadas"
+      ],
+      "declining_skills": [
+        "Digitação contábil e rotinas de escrituração manual",
+        "Conhecimento restrito a regras de preenchimento de formulários"
+      ],
+      "emerging_skills_2030": [
+        "Contabilidade Consultiva e Planejamento Tributário Estratégico",
+        "Tax Technology & Orquestração de Softwares Fiscais de IA",
+        "Auditoria Forense com Inteligência Artificial e Grafos de Transações",
+        "Relatórios de Sustentabilidade e Auditoria ESG"
+      ],
+      "transition_pivots": [
+        "Consultor(a) Tributário(a) Estratégico(a)",
+        "Especialista em Tax Tech e Automação Contábil",
+        "Auditor(a) Forense e de Prevenção à Lavagem de Dinheiro"
+      ],
+      "recommended_certifications": [
+        "Certified Public Accountant (CPA) / CRC Especialista",
+        "Certificação em Contabilidade Consultiva (CFC/FIPECAFI)",
+        "Auditoria Forense e Investigação de Fraudes (ACFE / CFE)"
+      ],
+      "action_plan_phases": {
+        "2026": "Automatizar 100% da escrituração e conciliação com ferramentas de inteligência fiscal. Migrar clientes para modelo consultivo.",
+        "2027_2028": "Especializar-se na Reforma Tributária e em Planejamento Sucessório/Societário, áreas com alto valor e blindadas contra automação.",
+        "2029_2030": "Atuar como Consultor de Negócios e Estrategista Tributário, utilizando IA para simular cenários de economia fiscal bilionários."
+      }
+    },
+    {
+      "id": "advogado_junior",
+      "title": "Advogado(a) / Analista Jurídico de Contratos",
+      "category": "Jurídico e Compliance",
+      "automation_risk_score": 64,
+      "ai_exposure_level": "Alto",
+      "augmentation_potential_score": 90,
+      "skills_radar_ideal": {
+        "pensamento_analitico": 9,
+        "orquestracao_ia": 8,
+        "criatividade_inovacao": 8,
+        "lideranca_influencia": 8,
+        "resiliencia_adaptabilidade": 8,
+        "especializacao_estrategica": 9
+      },
+      "declining_tasks": [
+        "Revisão manual de cláusulas padrão em contratos de grande volume (NDAs, termos de serviço)",
+        "Pesquisa jurisprudencial manual básica em tribunais",
+        "Redação de petições iniciais padronizadas de cobrança ou trânsito",
+        "Diligência prévia documental (Due Diligence mecânica)"
+      ],
+      "augmented_tasks": [
+        "Análise de riscos contratuais em segundos com LLMs especializados no direito",
+        "Pesquisa de teses jurídicas com RAG em milhares de acórdãos em minutos",
+        "Predição de chances de êxito em litígios com base em jurimetria"
+      ],
+      "human_core_tasks": [
+        "Negociação cara a cara de contratos complexos e acordos extrajudiciais",
+        "Sustentação oral em tribunais superiores e convencimento de magistrados",
+        "Julgamento de estratégia ética e reputacional da empresa",
+        "Acolhimento humanizado de clientes em momentos de crise pessoal ou corporativa"
+      ],
+      "declining_skills": [
+        "Memorização enciclopédica de números de artigos de leis",
+        "Redação jurídica prolixa e rebuscada sem foco em clareza (Legal Design)",
+        "Busca manual em diários oficiais sem automação"
+      ],
+      "emerging_skills_2030": [
+        "Legal Design e Visual Law aplicado a contratos inteligentes",
+        "Jurimetria e Análise de Dados Jurídicos para Tomada de Decisão",
+        "Direito de Inteligência Artificial, Propriedade Intelectual de IA e Regulação",
+        "Mediação, Resolução Alternativa de Conflitos e Negociação Estratégica"
+      ],
+      "transition_pivots": [
+        "Especialista em Regulação de IA, Privacidade e Ética Tecnológica",
+        "Legal Operations & Legal Tech Specialist",
+        "Estrategista de Negociação e Resolução de Conflitos Complexos"
+      ],
+      "recommended_certifications": [
+        "Legal Tech & AI in Law Specialization (Harvard / Oxford)",
+        "Certificação em Privacidade e Proteção de Dados (IAPP / CIPP/E / CDPO)",
+        "Certificação em Mediação e Negociação (Harvard Program on Negotiation)"
+      ],
+      "action_plan_phases": {
+        "2026": "Adotar ferramentas de Legal Tech e IA para revisão contratual e jurimetria. Cortar em 70% o tempo gasto com petições repetitivas.",
+        "2027_2028": "Especializar-se em áreas do direito de fronteira: Regulação de IA, Mercado de Carbono, Direito Digital e Governança Corporativa.",
+        "2029_2030": "Tornar-se Conselheiro Geral Estratégico (Chief Legal Officer), orientando conselhos administrativos em decisões regulatórias globais."
+      }
+    },
+    {
+      "id": "designer_grafico",
+      "title": "Designer Gráfico / Designer de Mídia",
+      "category": "Design, Criatividade e Comunicação",
+      "automation_risk_score": 71,
+      "ai_exposure_level": "Alto",
+      "augmentation_potential_score": 93,
+      "skills_radar_ideal": {
+        "pensamento_analitico": 7,
+        "orquestracao_ia": 10,
+        "criatividade_inovacao": 10,
+        "lideranca_influencia": 7,
+        "resiliencia_adaptabilidade": 9,
+        "especializacao_estrategica": 8
+      },
+      "declining_tasks": [
+        "Recorte manual de fotos e remoção de fundo",
+        "Criação de banners publicitários padronizados em múltiplos formatos",
+        "Variações de cor e tipografia em peças simples de redes sociais",
+        "Vetorização manual e banco de imagens genérico"
+      ],
+      "augmented_tasks": [
+        "Geração ultrarrápida de concept art e moodboards com Midjourney / Stable Diffusion",
+        "Produção de campanhas personalizadas em escala com IA generativa",
+        "Edição preditiva e animação vetorial com prompts textuais"
+      ],
+      "human_core_tasks": [
+        "Construção de identidade de marca (Branding) profunda e memorável",
+        "Direção de arte com sensibilidade cultural e crítica estética humana",
+        "Compreensão de psicologia do consumidor e emoções sutis",
+        "Experiências imersivas que conectam produtos ao propósito da marca"
+      ],
+      "declining_skills": [
+        "Operação técnica exclusiva de ferramentas sem conceito criativo",
+        "Resistência ao uso de ferramentas generativas na concepção visual"
+      ],
+      "emerging_skills_2030": [
+        "Direção Criativa de IA Generativa (Prompt Crafting, Inpainting, ControlNet)",
+        "Design de Interação Imersiva (AR/VR e Spatial Computing)",
+        "Design Estratégico de Marca e Experiência do Consumidor (CX)",
+        "Motion Design e Produção Audiovisual Aumentada por IA"
+      ],
+      "transition_pivots": [
+        "Diretor(a) de Criação e Estratégia de Conteúdo Visual",
+        "Spatial Experience Designer (Computação Espacial / AR)",
+        "Brand Strategist & Creative technologist"
+      ],
+      "recommended_certifications": [
+        "Creative Technologist & Generative AI Mastery (School of Motion / CalArts)",
+        "UX Design Professional Certificate (Google / Nielsen Norman Group)",
+        "Unity / Unreal Engine Certified Associate (Spatial Design)"
+      ],
+      "action_plan_phases": {
+        "2026": "Dominar ferramentas de síntese de imagem e vídeo por IA. Posicionar-se não como 'operador de software', mas como Diretor de Criação.",
+        "2027_2028": "Integrar design de produto (UI/UX) e psicologia comportamental à identidade de marca, elevando o valor estratégico de seus projetos.",
+        "2029_2030": "Liderar a estratégia visual de marcas globais, orquestrando fluxos criativos multimodais (vídeo, 3D, som, IA) com impacto emocional único."
+      }
+    },
+    {
+      "id": "redator_conteudo",
+      "title": "Redator(a) Publicitário / Criador de Conteúdo",
+      "category": "Design, Criatividade e Comunicação",
+      "automation_risk_score": 75,
+      "ai_exposure_level": "Crítico",
+      "augmentation_potential_score": 88,
+      "skills_radar_ideal": {
+        "pensamento_analitico": 7,
+        "orquestracao_ia": 9,
+        "criatividade_inovacao": 10,
+        "lideranca_influencia": 8,
+        "resiliencia_adaptabilidade": 8,
+        "especializacao_estrategica": 9
+      },
+      "declining_tasks": [
+        "Escrever artigos genéricos de blog voltados para SEO de palavras-chave mecânicas",
+        "Posts curtos descritivos para redes sociais sem profundidade",
+        "Tradução literal de textos comerciais básicos",
+        "Reescrita e paráfrase de notícias e comunicados de imprensa"
+      ],
+      "augmented_tasks": [
+        "Pesquisa aprofundada e síntese de fontes complexas em minutos com copilotos",
+        "Geração de 20 ganchos (hooks) e ideias de pauta para teste A/B instantâneo",
+        "Adaptação de um único conteúdo mestre para 10 formatos diferentes por IA"
+      ],
+      "human_core_tasks": [
+        "Jornalismo investigativo e entrevistas em primeira pessoa com fontes exclusivas",
+        "Narrativas emocionantes baseadas em vivências humanas reais e humor genuíno",
+        "Voz e tom de marca distintivos que quebram o padrão genérico dos LLMs",
+        "Opinião crítica fundamentada e coragem editorial"
+      ],
+      "declining_skills": [
+        "Produção de volume sem diferencial autoral",
+        "Foco estrito em contagem de palavras e densidade de SEO ultrapassado"
+      ],
+      "emerging_skills_2030": [
+        "Storytelling Estratégico e Narrativa de Marca de Alto Valor",
+        "Curadoria de Conteúdo e Fact-Checking Avançado",
+        "Engenharia de Prompt para Tom de Voz e Persona de Marca",
+        "Jornalismo de Dados e Produção de Conteúdo Multimodal (Áudio/Vídeo)"
+      ],
+      "transition_pivots": [
+        "Head de Estratégia de Conteúdo e Storytelling",
+        "Estrategista de Comunicação Executiva e Relações Públicas",
+        "Diretor(a) Editorial e Curador de Inteligência de Marca"
+      ],
+      "recommended_certifications": [
+        "Strategic Storytelling (Columbia University / Storytelling Institute)",
+        "Digital Journalism & Fact-Checking (Knight Center / Reuters)",
+        "Prompt Engineering for Narrative Design (Vanderbilt University)"
+      ],
+      "action_plan_phases": {
+        "2026": "Usar IA para triagem de dados e rascunhos. Focar 100% da energia em artigos de opinião, pesquisas originais e histórias humanas ricas.",
+        "2027_2028": "Expandir para produção multimídia (podcasts, vídeos curtos, newsletters exclusivas) onde a personalidade do criador é insubstituível.",
+        "2029_2030": "Tornar-se uma autoridade e curador de confiança (Thought Leader), liderando canais de comunicação com audiência altamente leal."
+      }
+    },
+    {
+      "id": "atendente_sac",
+      "title": "Atendente de SAC / Suporte ao Cliente / Telemarketing",
+      "category": "Vendas, Atendimento e Marketing",
+      "automation_risk_score": 91,
+      "ai_exposure_level": "Crítico",
+      "augmentation_potential_score": 50,
+      "skills_radar_ideal": {
+        "pensamento_analitico": 7,
+        "orquestracao_ia": 7,
+        "criatividade_inovacao": 6,
+        "lideranca_influencia": 9,
+        "resiliencia_adaptabilidade": 10,
+        "especializacao_estrategica": 7
+      },
+      "declining_tasks": [
+        "Responder perguntas frequentes sobre status de pedidos, 2ª via de boleto e senhas",
+        "Leitura de scripts rígidos de atendimento por telefone ou chat",
+        "Registro manual de chamados e preenchimento de campos de CRM",
+        "Tentativas mecânicas de retenção de cancelamento via roteiro"
+      ],
+      "augmented_tasks": [
+        "Resumos instantâneos do histórico do cliente gerados por IA antes da chamada",
+        "Tradução simultânea em tempo real para atendimento internacional",
+        "Recomendações automáticas de ofertas personalizadas na tela durante o contato"
+      ],
+      "human_core_tasks": [
+        "Gerenciamento de situações de crise com clientes altamente frustrados ou em pânico",
+        "Mediação empática de problemas éticos ou perdas financeiras graves",
+        "Construção de confiança genuína e conexões humanas duradouras",
+        "Advocacia interna da voz do cliente junto ao time de engenharia e produto"
+      ],
+      "declining_skills": [
+        "Atendimento baseado em roteiros fixos sem flexibilidade",
+        "Digitação rápida sem capacidade de escuta ativa"
+      ],
+      "emerging_skills_2030": [
+        "Customer Success Management (CSM) focado em valor de negócio",
+        "Inteligência Emocional e Desescalonamento de Conflitos Graves",
+        "Supervisão e Treinamento de Agentes Virtuais de Atendimento",
+        "Análise de Experiência do Cliente (Voice of Customer & Churn Analytics)"
+      ],
+      "transition_pivots": [
+        "Gerente de Sucesso do Cliente (Customer Success Manager)",
+        "Especialista em Treinamento de Agentes de IA Conversacional",
+        "Analista de Operações de Relacionamento (CX Operations)"
+      ],
+      "recommended_certifications": [
+        "Customer Success Professional Certification (Gainsight / SuccessHACKER)",
+        "Zendesk / Salesforce Certified Administrator",
+        "Comunicação Não-Violenta e Mediação de Conflitos"
+      ],
+      "action_plan_phases": {
+        "2026": "Migrar do suporte reativo ('apagar incêndios') para o papel de Customer Success proativo, ajudando o cliente a ter sucesso no uso do produto.",
+        "2027_2028": "Aprender métricas de negócios (NPS, Churn, LTV, Retention) e como configurar bots de IA para filtrar 80% das dúvidas triviais.",
+        "2029_2030": "Assumir a gestão de contas estratégicas (Enterprise CSM), onde contratos milionários dependem de confiança e empatia humana."
+      }
+    },
+    {
+      "id": "gerente_projetos",
+      "title": "Gerente de Projetos / Scrum Master",
+      "category": "Gestão e Liderança",
+      "automation_risk_score": 45,
+      "ai_exposure_level": "Moderado",
+      "augmentation_potential_score": 92,
+      "skills_radar_ideal": {
+        "pensamento_analitico": 9,
+        "orquestracao_ia": 9,
+        "criatividade_inovacao": 8,
+        "lideranca_influencia": 10,
+        "resiliencia_adaptabilidade": 9,
+        "especializacao_estrategica": 9
+      },
+      "declining_tasks": [
+        "Cobrança manual diária de status de tarefas individuais",
+        "Montagem manual de cronogramas estáticos e gráficos de Gantt",
+        "Redação manual de atas de cerimônias ágeis e relatórios de progresso",
+        "Cálculo mecânico de velocidade de equipe e burndown charts"
+      ],
+      "augmented_tasks": [
+        "Previsão preditiva de atrasos e gargalos com base no histórico do time",
+        "Alocação dinâmica e inteligente de recursos orientada por algoritmos",
+        "Análise de sentimento do time através de sinais de comunicação assíncrona"
+      ],
+      "human_core_tasks": [
+        "Desbloqueio de conflitos interpessoais e motivação de equipes de alta performance",
+        "Negociação de escopo com patrocinadores executivos sob incerteza",
+        "Criação de segurança psicológica e ambiente de inovação colaborativo",
+        "Alinhamento dos objetivos do projeto com a visão de futuro da empresa"
+      ],
+      "declining_skills": [
+        "Apego estrito a cerimônias ágeis mecânicas sem foco em entrega de valor",
+        "Controle de horas trabalhadas (timesheet) em detrimento de resultados"
+      ],
+      "emerging_skills_2030": [
+        "Liderança Adaptativa de Times Híbridos (Engenheiros Humanos + Agentes Autônomos)",
+        "Gestão de Portfólio Orientada a Valor e Métricas de Impacto (OKRs)",
+        "Orquestração de Projetos com Ferramentas Cognitivas e IA Preditiva",
+        "Facilitação de Decisões Estratégicas sob Alta Incerteza"
+      ],
+      "transition_pivots": [
+        "Product Operations Director (Head de Product Ops)",
+        "Agile Transformation & AI Delivery Lead",
+        "Chief Operating Officer (COO) / Diretor(a) de Operações"
+      ],
+      "recommended_certifications": [
+        "PMI Agile Certified Practitioner (PMI-ACP) / PMP com ênfase em IA",
+        "Professional Scrum Master III / Agile Coach Certified",
+        "Leading in the AI Era (INSEAD / MIT Sloan)"
+      ],
+      "action_plan_phases": {
+        "2026": "Automatizar a coleta de métricas e status com ferramentas integradas a IA (Linear, Jira AI, Asana Intelligence). Focar em pessoas e alinhamento.",
+        "2027_2028": "Desenvolver expertise na gestão de times com agentes de software embutidos no fluxo de trabalho. Liderar a transformação cultural.",
+        "2029_2030": "Tornar-se Head de Operações Estratégicas (Head of Delivery), responsável por orquestrar iniciativas de inovação corporativa de grande escala."
+      }
+    },
+    {
+      "id": "rh_recrutador",
+      "title": "Analista de Recursos Humanos / Recrutador(a)",
+      "category": "Administração e Operações",
+      "automation_risk_score": 62,
+      "ai_exposure_level": "Alto",
+      "augmentation_potential_score": 88,
+      "skills_radar_ideal": {
+        "pensamento_analitico": 8,
+        "orquestracao_ia": 8,
+        "criatividade_inovacao": 8,
+        "lideranca_influencia": 10,
+        "resiliencia_adaptabilidade": 8,
+        "especializacao_estrategica": 9
+      },
+      "declining_tasks": [
+        "Triagem manual inicial de pilhas de currículos por palavras-chave",
+        "Agendamento manual de entrevistas com candidatos",
+        "Elaboração mecânica de descrições de vagas padronizadas",
+        "Respostas automáticas de feedback de processos seletivos"
+      ],
+      "augmented_tasks": [
+        "Matching preditivo de candidatos por mapeamento de competências e fit cultural",
+        "Análise de dados de mercado salarial e escassez de talentos em tempo real",
+        "Simulação de trilhas personalizadas de carreira para colaboradores com IA"
+      ],
+      "human_core_tasks": [
+        "Entrevistas profundas de julgamento de integridade, valores e inteligência emocional",
+        "Negociação de contratação e convencimento de talentos de topo do mercado",
+        "Diagnóstico de clima organizacional e mediação de conflitos corporativos",
+        "Planejamento de retenção e desenho de cultura em momentos de mudança rápida"
+      ],
+      "declining_skills": [
+        "Triagem intuitiva baseada em vieses inconscientes",
+        "Uso de sistemas de ATS tradicionais sem inteligência contextual"
+      ],
+      "emerging_skills_2030": [
+        "People Analytics e Modelagem Preditiva de Retenção de Talentos",
+        "Auditoria de Vieses Algorítmicos em Sistemas de RH e Recrutamento",
+        "Desenho de Organizações Híbridas (Humanos + Agentes Inteligentes)",
+        "Estratégia de Reskilling e Desenvolvimento Contínuo da Força de Trabalho"
+      ],
+      "transition_pivots": [
+        "Head de People Analytics & AI Talent Strategy",
+        "Diretor(a) de Cultura e Desenvolvimento Organizacional",
+        "Executive Coach e Consultor(a) de Liderança Estratégica"
+      ],
+      "recommended_certifications": [
+        "People Analytics Specialization (Wharton University)",
+        "SHRM Senior Certified Professional (SHRM-SCP)",
+        "Certificação Internacional em Coaching Executivo (ICF)"
+      ],
+      "action_plan_phases": {
+        "2026": "Adotar ferramentas de People Analytics e triagem com IA justa, eliminando tarefas operacionais para focar 100% no relacionamento humano.",
+        "2027_2028": "Liderar os programas de requalificação (Reskilling) da organização para preparar a empresa para o impacto da IA.",
+        "2029_2030": "Tornar-se Chief People Officer (CPO), arquiteto da simbiose entre as competências humanas e a infraestrutura tecnológica da companhia."
+      }
+    },
+    {
+      "id": "medico_clinico",
+      "title": "Médico(a) Clínico / Especialista em Saúde",
+      "category": "Saúde e Bem-Estar",
+      "automation_risk_score": 22,
+      "ai_exposure_level": "Baixo a Moderado",
+      "augmentation_potential_score": 96,
+      "skills_radar_ideal": {
+        "pensamento_analitico": 10,
+        "orquestracao_ia": 8,
+        "criatividade_inovacao": 7,
+        "lideranca_influencia": 9,
+        "resiliencia_adaptabilidade": 8,
+        "especializacao_estrategica": 10
+      },
+      "declining_tasks": [
+        "Preenchimento manual de prontuários médicos durante a consulta",
+        "Análise visual preliminar exaustiva de exames de imagem padronizados",
+        "Busca manual de bulas e interações medicamentosas simples"
+      ],
+      "augmented_tasks": [
+        "Prontuário por reconhecimento de voz e sumarização clínica instantânea",
+        "Detecção precoce de anomalias em radiografias e ressonâncias por IA",
+        "Medicina de precisão com cruzamento de dados genômicos e históricos do paciente"
+      ],
+      "human_core_tasks": [
+        "Acolhimento empático, comunicação de diagnósticos difíceis e vínculo de confiança",
+        "Decisões éticas complexas de fim de vida e cuidados paliativos",
+        "Cirurgias de emergência e procedimentos com alta variação anatômica",
+        "Interpretação holística do contexto psicossocial e familiar do doente"
+      ],
+      "declining_skills": [
+        "Memorização manual de centenas de diretrizes clínicas isoladas",
+        "Digitação enquanto o paciente fala"
+      ],
+      "emerging_skills_2030": [
+        "Medicina Aumentada por IA e Integração de Dispositivos Vestíveis (Wearables)",
+        "Comunicação Clínica Empática e Tomada de Decisão Compartilhada",
+        "Governança de Dados de Saúde e Bioética de Algoritmos Médicos",
+        "Medicina Preditiva, Preventiva e Personalizada"
+      ],
+      "transition_pivots": [
+        "Diretor(a) Médico(a) de Inovação e Saúde Digital (HealthTech)",
+        "Especialista em Bioética e IA Clínica",
+        "Líder de Medicina Personalizada e Genômica Clínica"
+      ],
+      "recommended_certifications": [
+        "AI in Healthcare Specialization (Stanford Medicine)",
+        "Certificação em Informática em Saúde (SBIS / AMIA)",
+        "Liderança em Sistemas de Saúde (Harvard T.H. Chan)"
+      ],
+      "action_plan_phases": {
+        "2026": "Adotar sistemas de escriba médico por IA para eliminar tempo de tela e resgatar o contato visual e a atenção integral ao paciente.",
+        "2027_2028": "Integrar ferramentas de apoio diagnóstico com IA na prática clínica diária, tornando-se referência em segurança e precisão do paciente.",
+        "2029_2030": "Liderar núcleos de medicina de precisão e inovação hospitalar, garantindo uso ético e seguro de tecnologias de ponta em saúde."
+      }
+    },
+    {
+      "id": "professor_educador",
+      "title": "Professor(a) / Educador(a) / Instrutor(a)",
+      "category": "Educação e Treinamento",
+      "automation_risk_score": 38,
+      "ai_exposure_level": "Moderado",
+      "augmentation_potential_score": 90,
+      "skills_radar_ideal": {
+        "pensamento_analitico": 8,
+        "orquestracao_ia": 8,
+        "criatividade_inovacao": 9,
+        "lideranca_influencia": 10,
+        "resiliencia_adaptabilidade": 9,
+        "especializacao_estrategica": 9
+      },
+      "declining_tasks": [
+        "Correção manual de provas de múltipla escolha e exercícios mecânicos",
+        "Aulas estritamente expositivas com leitura de slides pré-fabricados",
+        "Elaboração manual de listas de exercícios e planos de aula burocráticos",
+        "Preenchimento mecânico de diários de classe e diários de frequência"
+      ],
+      "augmented_tasks": [
+        "Tutores de IA personalizados para cada aluno tirar dúvidas no seu próprio ritmo",
+        "Geração de estudos de caso interativos e simulações com IA em tempo real",
+        "Diagnóstico imediato de lacunas de aprendizagem por dashboards de dados"
+      ],
+      "human_core_tasks": [
+        "Mentoria emocional, inspiração e desenvolvimento de autoconfiança no estudante",
+        "Facilitação de debates provocativos e estímulo ao pensamento crítico",
+        "Mediação de dinâmicas em grupo e resolução de conflitos entre jovens",
+        "Formação de caráter, cidadania e pensamento ético sobre o mundo"
+      ],
+      "declining_skills": [
+        "Método de ensino unidirecional puramente transmissor",
+        "Avaliação baseada exclusivamente em decoreba e memorização de fatos"
+      ],
+      "emerging_skills_2030": [
+        "Design de Aprendizagem Adaptativa com Tutores de IA",
+        "Facilitação de Aprendizado Ativo (PBL, Sala de Aula Invertida, Debates)",
+        "Educação para Literacia Crítica em IA e Avaliação de Fontes",
+        "Socioemocional e Mentoria Individualizada de Estudantes"
+      ],
+      "transition_pivots": [
+        "Designer de Experiências de Aprendizagem com IA (Learning Experience Designer)",
+        "Mentor(a) Educacional e Estrategista de Carreira Jovem",
+        "Diretor(a) Pedagógico(a) de Inovação Educacional (EdTech)"
+      ],
+      "recommended_certifications": [
+        "Instructional Design and Technology (MIT / Harvard GSE)",
+        "AI in Education Specialist (ISTE / UNESCO)",
+        "Facilitação de Aprendizagem Socioemocional (Yale Center for Emotional Intelligence)"
+      ],
+      "action_plan_phases": {
+        "2026": "Integrar assistentes de IA para correção e planejamento. Transformar a sala de aula física em espaço de debate e solução prática de problemas.",
+        "2027_2028": "Ensinar os alunos a questionar criticamente as respostas de IAs, desenvolvendo checagem de fatos e pensamento analítico rigoroso.",
+        "2029_2030": "Tornar-se arquiteto pedagógico de ecossistemas educacionais que combinam personalização algorítmica e tutoria humana de alto impacto."
+      }
+    }
+  ]
+}
